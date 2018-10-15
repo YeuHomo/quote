@@ -1,64 +1,264 @@
-@import '@/assets/css/reset.scss';
-@import '@/assets/css/common.scss';
-
-.page {
-  overflow: auto;
-  margin: 60px 0 0 230px;
+@charset "utf-8";
+blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, pre, td, textarea, th, ul {
+  margin: 0;
+  padding: 0;
 }
 
-.el-table {
-  th {
-    color: #333333;
-    background: #EEEEEE !important;
-  }
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
-.el-checkbox {
-  .el-checkbox__input.is-checked + .el-checkbox__label {
-    color: #606266;
-  }
+body, button, input, select, textarea {
+  font: 14px/1.5 \5FAE\8F6F\96C5\9ED1, tahoma, arial, 'Hiragino Sans GB', \5b8b\4f53, sans-serif
 }
 
-.el-checkbox__inner::after {
-  border-right: 2px solid #499ffe !important;
-  border-bottom: 2px solid #499ffe !important;
+body, html {
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Microsoft YaHei', \5FAE\8F6F\96C5\9ED1, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  min-width: 320px;
+  overflow-y: auto;
+  -webkit-text-size-adjust: none;
+  color: #333;
+  max-width: 100%;
+  background-color: #f1f1f1;
+  --myHeight: 475px
 }
 
-.el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner, .el-radio__input.is-checked .el-radio__inner {
-  background-color: #fff !important;
+h1, h2, h3, h4, h5, h6, button, input, select, textarea {
+  font-size: 100%
 }
 
-.el-radio__inner {
-  width: 20px !important;
-  height: 20px !important;
+ol, ul {
+  list-style: none
 }
 
-.el-radio__inner::after {
-  width: 8px !important;
-  height: 8px !important;
-  background-color: #499ffe !important;
+a {
+  text-decoration: none;
+  color: #333;
 }
-.el-checkbox__inner {
-  width: 18px !important;
-  height: 18px !important;
+
+a:hover, a:focus {
+  text-decoration: none;
 }
-.el-checkbox__inner::after{
-  height: 9px !important;
+
+fieldset, img {
+  border: 0;
+  vertical-align: top;
+}
+
+textarea {
+  resize: none;
+}
+
+textarea, input {
+  /*-webkit-appearance: none;*/
+}
+
+a, input, button, select, textarea {
+  outline: none;
+}
+
+a {
+  cursor: none;
+}
+
+img {
+  border: 0;
+  vertical-align: top;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.w95 {
+  width: 95%;
+}
+
+.w90 {
+  width: 90%;
+}
+
+.tr {
+  text-align: right;
+}
+
+.tl {
+  text-align: left;
+}
+
+.tc {
+  text-align: center;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.btn_100 {
+  width: 90vw;
+  height: 12vw;
+  margin: 5vw;
+  border: 0;
+  background-color: #ffffff;
+  border-radius: 12vw;
+  font-size: 1.3rem;
+}
+
+.btn_50 {
+  border: 0;
+  width: 40vw;
+  height: 12vw;
+  background-color: #03c8af;
+  color: #fbfaf9;
+  border-radius: 12vw;
+  margin: 0 5vw;
+  font-size: 1.3rem;
+}
+
+.mint-tab-item-label {
+  font-size: 16px !important;
+}
+
+.mint-switch-input:checked + .mint-switch-core, .mint-checkbox-input:checked + .mint-checkbox-core {
+  border-color: #03c8af !important;
+  background-color: #03c8af !important;
+}
+
+.mint-switch-core {
+  width: 12.3vw !important;
+  height: 6.1vw !important;
+}
+
+.mint-switch-core::after {
+  width: 5.5vw !important;
+  height: 5.5vw !important;
+  border-radius: 50% !important;
+}
+
+.mint-switch-input:checked + .mint-switch-core::after {
+  left: 1vw !important;
+}
+
+.mint-cell-text {
+  color: #1e1e1e !important;
+  font-size: 14px !important;
+}
+
+.mint-checkbox-label {
+  margin-left: 0 !important;
+  font-size: 12px;
+  color: #8d8c8c;
+}
+
+.mint-checkbox-core {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.mint-checkbox-core::after {
+  top: 2px !important;
   left: 5px !important;
-  width: 5px !important;
 }
-.el-input-number--medium,.el-date-editor.el-input, .el-date-editor.el-input__inner,.el-select{
-  width: 100% !important;
-  max-width: 16vw;
+
+.mychecklist {
+  .mint-checkbox-core {
+    border-radius: 0 !important;
+  }
+  .mint-checklist-title {
+    margin: 0 !important;
+  }
+  .mint-checkbox-label {
+    color: #1e1e1e !important;
+    font-size: 3.7vw !important;
+  }
 }
-.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li{
-  background-color: #fff !important;
-  border-radius: 3px !important;
-  border: solid 1px #d2d2d2 !important;
-  color: #999999 !important;
+
+.mint-radiolist-title {
+  margin: 0 !important;
 }
-.el-pagination.is-background .el-pager li:not(.disabled).active{
-  background-color: #499ffe !important;
-  border: solid 1px #499ffe !important;
-  color:#fff !important;
+
+.btn_box {
+  margin-top: 15px;
+}
+
+header {
+  background-color: #03c8af;
+  height: 10.7vw;
+  line-height: 10.7vw;
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 0 15px;
+}
+
+.mint-radio-input:checked + .mint-radio-core {
+  background-color: #03c8af !important;
+  border-color: #03c8af !important;
+}
+
+.myradio {
+  .mint-radio-label {
+    font-size: 14px !important;
+  }
+  .mint-radiolist-label {
+    padding: 0 !important;
+  }
+}
+
+.mycell {
+  .mint-cell-value {
+    font-size: 15px !important;
+    color: #333333 !important;
+  }
+}
+
+.mint-cell-text, .mint-cell-value {
+  font-size: 15px !important;
+}
+
+.cell-title {
+  .mint-cell-value, .mint-cell-text {
+    font-size: 13px !important;
+    color: #919090 !important;
+  }
+}
+
+.mycheck, .myradio {
+  .mint-checklist-title {
+    margin: 0 !important;
+  }
+  div, a {
+    height: 30px;
+    line-height: 30px;
+    background-image: none !important;
+  }
+}
+
+.mycheck {
+  div, a {
+    margin-top: 1px;
+  }
+}
+.my-cell {
+  .mint-cell-text{
+    color:#666 !important;
+  }
+}
+
+.footer {
+  font-size: 1rem;
+  color: #999999;
+  margin-bottom: 5px;
+  p {
+    -webkit-transform: scale(0.90);
+  }
+}
+.mint-indicator-wrapper{
+  z-index: 100;
 }

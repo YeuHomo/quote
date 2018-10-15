@@ -1,29 +1,32 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app">
+        <div id="nav">
+            <router-link to="/home"></router-link>
+        </div>
+        <router-view/>
     </div>
-    <router-view/>
-  </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+    @import 'app.scss';
 </style>
+<script>
+    // import {GetUrlParam} from "@/utils/common";
+    export default {
+        mounted() {
+            // console.log( this.$route);
+            // if ((!this.$store.state.fanid || this.$store.state.fanid === '0') && this.$route.name !== 'index') {
+            //     // window.location.href = 'https://kaka.kelibbb.com/klkl/merchants.php?m=Carinsur&c=h5&a=index&key=kk&role=4';
+            // }
+        },
+        created() {
+            if (sessionStorage.getItem("store")) {
+                this.$store.replaceState(Object.assign({}, this.$store.state, JSON.parse(sessionStorage.getItem("store"))))
+            }
+
+            window.addEventListener("beforeunload", () => {
+                sessionStorage.setItem("store", JSON.stringify(this.$store.state))
+            })
+        }
+    }
+</script>

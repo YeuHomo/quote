@@ -1,6 +1,6 @@
 const dev = false;
 module.exports = {
-    baseUrl: '/agent/',
+    baseUrl: '/quote/',
     lintOnSave: false,
     devServer: {
         overlay: {
