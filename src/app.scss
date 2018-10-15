@@ -1,0 +1,64 @@
+@import '@/assets/css/reset.scss';
+@import '@/assets/css/common.scss';
+
+.page {
+  overflow: auto;
+  margin: 60px 0 0 230px;
+}
+
+.el-table {
+  th {
+    color: #333333;
+    background: #EEEEEE !important;
+  }
+}
+
+.el-checkbox {
+  .el-checkbox__input.is-checked + .el-checkbox__label {
+    color: #606266;
+  }
+}
+
+.el-checkbox__inner::after {
+  border-right: 2px solid #499ffe !important;
+  border-bottom: 2px solid #499ffe !important;
+}
+
+.el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner, .el-radio__input.is-checked .el-radio__inner {
+  background-color: #fff !important;
+}
+
+.el-radio__inner {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.el-radio__inner::after {
+  width: 8px !important;
+  height: 8px !important;
+  background-color: #499ffe !important;
+}
+.el-checkbox__inner {
+  width: 18px !important;
+  height: 18px !important;
+}
+.el-checkbox__inner::after{
+  height: 9px !important;
+  left: 5px !important;
+  width: 5px !important;
+}
+.el-input-number--medium,.el-date-editor.el-input, .el-date-editor.el-input__inner,.el-select{
+  width: 100% !important;
+  max-width: 16vw;
+}
+.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li{
+  background-color: #fff !important;
+  border-radius: 3px !important;
+  border: solid 1px #d2d2d2 !important;
+  color: #999999 !important;
+}
+.el-pagination.is-background .el-pager li:not(.disabled).active{
+  background-color: #499ffe !important;
+  border: solid 1px #499ffe !important;
+  color:#fff !important;
+}
